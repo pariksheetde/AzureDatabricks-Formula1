@@ -1,4 +1,5 @@
 # Databricks notebook source
+# DBTITLE 1,run the notebook to invoke configuration
 # MAGIC %run "../9.Includes/1.config"
 
 # COMMAND ----------
@@ -119,6 +120,7 @@ spark.conf.set("spark.sql.sources.partitionOverwriteMode", "dynamic")
 
 # COMMAND ----------
 
+# DBTITLE 1,if the table `lap_times` exists then data will be populated else create the table and load
 if (spark._jsparkSession.catalog().tableExists("f1_incremental.lap_times")):
   validate_final_lap_times_df.write.mode("overwrite").insertInto("f1_incremental.lap_times")
 else:
@@ -136,6 +138,7 @@ else:
 
 # COMMAND ----------
 
+# DBTITLE 1,Validating the results using SQL
 # MAGIC %sql
 # MAGIC SELECT
 # MAGIC COUNT(*) as cnt,
@@ -147,9 +150,10 @@ else:
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+# DBTITLE 1,Exiting the notebook
+dbutils.notebook.exit("INCREMENTAL LOAD FOR LAP TIMES HAS BEEN LOADED SUCCESSFULLY")
 
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC DROP TABLE f1_incremental.lap_times;
+# MAGIC DROP TABLE f1_incremental.lap_times

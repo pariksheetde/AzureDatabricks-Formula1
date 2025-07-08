@@ -51,4 +51,4 @@
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("DATABASE CREATION EXECUTED SUCCESSFULLY")

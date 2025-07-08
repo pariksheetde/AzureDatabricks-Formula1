@@ -115,4 +115,4 @@ drivers_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_etl.d
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("DRIVER HAS BEEN LOADED SUCCESSFULLY")

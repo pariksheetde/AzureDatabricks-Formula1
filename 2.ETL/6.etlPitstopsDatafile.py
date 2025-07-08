@@ -83,4 +83,4 @@ pit_stops_renamed_df.write.mode("overwrite").format("parquet").saveAsTable("f1_e
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("PIT STOPS HAS BEEN LOADED SUCCESSFULLY")

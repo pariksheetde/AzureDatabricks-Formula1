@@ -170,4 +170,4 @@ results_final_df.write.mode("append").partitionBy("race_id").format("parquet").s
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR RESULTS HAS BEEN LOADED SUCCESSFULLY")

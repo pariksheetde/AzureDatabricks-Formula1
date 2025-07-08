@@ -87,12 +87,12 @@ display(rename_races_df)
 
 # COMMAND ----------
 
-from pyspark.sql.functions import current_timestamp, lit, col, to_timestamp, concat
+# from pyspark.sql.functions import current_timestamp, lit, col, to_timestamp, concat
 
-races_with_timestamp_df = ingest_dtm(rename_races_df).withColumn("race_timestamp", to_timestamp(concat(col("date"), lit(' '), col("time")), 'yyyy-MM-dd HH:mm:ss')) \
-.drop("date", "time")
+# races_with_timestamp_df = ingest_dtm(rename_races_df).withColumn("race_timestamp", to_timestamp(concat(col("date"), lit(' '), col("time")), 'yyyy-MM-dd HH:mm:ss')) \
+# .drop("date", "time")
 
-display(races_with_timestamp_df)
+# display(races_with_timestamp_df)
 
 # COMMAND ----------
 
@@ -101,7 +101,7 @@ display(races_with_timestamp_df)
 
 # COMMAND ----------
 
-races_with_timestamp_df.write.mode("overwrite").partitionBy("race_year").parquet(f"{processed_path}/races")
+rename_races_df.write.mode("overwrite").partitionBy("race_year").parquet(f"{processed_path}/races")
 print(processed_path)
 
 # COMMAND ----------
@@ -116,7 +116,7 @@ validate_races_df = spark.read \
 
 display(validate_races_df)
 validate_races_df.printSchema()
-print(f"Number of Records Read {validate_races_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {validate_races_df.count()}")
 
 # COMMAND ----------
 
@@ -134,4 +134,4 @@ print(f"Number of Records Read {validate_races_df.count()}")
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_races_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED {validate_races_df.count()}")

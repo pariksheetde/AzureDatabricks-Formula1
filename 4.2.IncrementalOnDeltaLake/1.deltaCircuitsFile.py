@@ -143,4 +143,4 @@ circuits_final_df.write.mode("overwrite").format("delta").saveAsTable("f1_delta.
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR CIRCUITSS HAS BEEN LOADED SUCCESSFULLY")

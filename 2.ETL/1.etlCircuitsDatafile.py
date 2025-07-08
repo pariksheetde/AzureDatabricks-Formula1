@@ -137,4 +137,4 @@ circuits_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_etl.
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("CIRCUITS HAS BEEN LOADED SUCCESSFULLY")

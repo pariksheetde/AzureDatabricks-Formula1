@@ -93,7 +93,7 @@ validate_qualifying_df = spark.read \
 
 display(validate_qualifying_df)
 validate_qualifying_df.printSchema()
-print(f"Number of Records Read {validate_qualifying_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {validate_qualifying_df.count()}")
 
 # COMMAND ----------
 
@@ -111,4 +111,4 @@ print(f"Number of Records Read {validate_qualifying_df.count()}")
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_qualifying_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED: {validate_qualifying_df.count()}")

@@ -37,7 +37,7 @@ def mount_adls(container_name):
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC #### Mount Raw Container
+# MAGIC #### MOUNT RAW CONTAINER
 
 # COMMAND ----------
 
@@ -48,7 +48,7 @@ dbutils.fs.ls("/mnt/formula1dbdevadls/raw")
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC #### Mount Processed Container
+# MAGIC #### MOUNT PROCESSED CONTAINER
 
 # COMMAND ----------
 
@@ -59,18 +59,7 @@ dbutils.fs.ls("/mnt/formula1dbdevadls/processed")
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC #### Mount Retail Container
-
-# COMMAND ----------
-
-dbutils.fs.unmount("/mnt/formula1dbdevadls/retail")
-# mount_adls("retail")
-# dbutils.fs.ls("/mnt/formula1dbdevadls/retail")
-
-# COMMAND ----------
-
-# MAGIC %md
-# MAGIC #### Mount Presentation Container
+# MAGIC #### MOUNT PRESENTATION CONTAINER
 # MAGIC
 
 # COMMAND ----------
@@ -82,7 +71,7 @@ dbutils.fs.ls("/mnt/formula1dbdevadls/presentation")
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC #### Mount Incremental Container
+# MAGIC #### MOUNT INCREMENTAL CONTAINER
 
 # COMMAND ----------
 
@@ -93,8 +82,7 @@ dbutils.fs.ls("/mnt/formula1dbdevadls/incremental")
 # COMMAND ----------
 
 # MAGIC %md
-# MAGIC %md
-# MAGIC #### Mount DeltaLake Container
+# MAGIC #### MOUNT DELTALAKE CONTAINER
 # MAGIC
 
 # COMMAND ----------
@@ -105,4 +93,4 @@ dbutils.fs.ls("/mnt/formula1dbdevadls/deltalake")
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("MOUNTING OF ADLS COMPLETED SUCCESSFULLY")

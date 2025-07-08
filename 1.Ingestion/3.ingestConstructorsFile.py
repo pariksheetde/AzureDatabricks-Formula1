@@ -79,7 +79,7 @@ validate_constructors_df = spark.read \
 
 display(validate_constructors_df)
 validate_constructors_df.printSchema()
-print(f"Number of Records Read {validate_constructors_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {validate_constructors_df.count()}")
 
 # COMMAND ----------
 
@@ -97,4 +97,4 @@ print(f"Number of Records Read {validate_constructors_df.count()}")
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_constructors_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED: {validate_constructors_df.count()}")

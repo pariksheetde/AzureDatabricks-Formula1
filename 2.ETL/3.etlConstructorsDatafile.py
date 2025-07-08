@@ -74,4 +74,4 @@ rename_constructors_df.write.mode("overwrite").format("parquet").saveAsTable("f1
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("CONSTRUCTORS HAS BEEN LOADED SUCCESSFULLY")

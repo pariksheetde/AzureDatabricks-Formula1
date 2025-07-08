@@ -43,7 +43,7 @@ lap_times_df = spark.read \
 
 display(lap_times_df)
 lap_times_df.printSchema()
-print(f"Number of Records Read {lap_times_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {lap_times_df.count()}")
 
 print(raw_path)
 
@@ -107,4 +107,4 @@ print(f"Number of Records Read {validate_lap_times_df.count()}")
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_lap_times_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED: {validate_lap_times_df.count()}")

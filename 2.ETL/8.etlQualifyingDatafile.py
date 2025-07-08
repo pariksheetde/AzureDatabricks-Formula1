@@ -88,4 +88,4 @@ qualifying_renamed_df.write.mode("overwrite").format("parquet").saveAsTable("f1_
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("QUALIFYING HAS BEEN LOADED SUCCESSFULLY")

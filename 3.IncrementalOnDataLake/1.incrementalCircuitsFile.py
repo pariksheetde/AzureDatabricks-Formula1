@@ -157,7 +157,7 @@ circuits_final_df.write.mode("overwrite").format("parquet").saveAsTable("f1_incr
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR CIRCUITS HAS BEEN LOADED SUCCESSFULLY")
 
 # COMMAND ----------
 

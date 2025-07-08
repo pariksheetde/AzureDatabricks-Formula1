@@ -88,7 +88,7 @@ validate_pit_stops_df = spark.read \
 
 display(validate_pit_stops_df)
 validate_pit_stops_df.printSchema()
-print(f"Number of Records Read {validate_pit_stops_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {validate_pit_stops_df.count()}")
 print(processed_path)
 
 # COMMAND ----------
@@ -107,4 +107,4 @@ print(processed_path)
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_pit_stops_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED: {validate_pit_stops_df.count()}")

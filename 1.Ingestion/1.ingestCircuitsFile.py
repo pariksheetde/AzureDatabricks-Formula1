@@ -143,13 +143,8 @@ validate_circuits_df = spark.read \
 
 display(validate_circuits_df)
 validate_circuits_df.printSchema()
-print(f"Number of Records Read {validate_circuits_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {validate_circuits_df.count()}")
 print(processed_path)
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC -- SELECT * FROM parquet.`f"{processed_path}/circuits"`;
 
 # COMMAND ----------
 
@@ -167,4 +162,4 @@ print(processed_path)
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_circuits_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED {validate_circuits_df.count()}")

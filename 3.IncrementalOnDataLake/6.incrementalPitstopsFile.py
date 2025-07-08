@@ -149,9 +149,4 @@ else:
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC DROP TABLE f1_incremental.pit_stops;
+dbutils.notebook.exit("INCREMENTAL LOAD FOR PIT STOPS HAS BEEN LOADED SUCCESSFULLY")

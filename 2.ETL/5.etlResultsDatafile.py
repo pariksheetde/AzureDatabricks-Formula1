@@ -101,4 +101,4 @@ results_renamed_df.write.mode("overwrite").partitionBy("race_id").format("parque
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("RESULTS HAS BEEN LOADED SUCCESSFULLY")

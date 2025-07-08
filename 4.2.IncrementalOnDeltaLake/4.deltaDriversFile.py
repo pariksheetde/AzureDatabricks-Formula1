@@ -124,4 +124,4 @@ drivers_final_df.write.mode("overwrite").format("delta").saveAsTable("f1_delta.d
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR DRIVERS HAS BEEN LOADED SUCCESSFULLY")

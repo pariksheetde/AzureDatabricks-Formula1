@@ -142,7 +142,7 @@ if (spark._jsparkSession.catalog().tableExists("f1_delta.results")):
   deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/results")
   deltaTable.alias("tgt").merge(
     results_deduped_df.alias("src"),
-    "tgt.result_id = src.result_id AND tgt.race_id = src.race_id") \
+    "tgt.resultId = src.result_id AND tgt.race_id = src.race_id") \
   .whenMatchedUpdateAll() \
   .whenNotMatchedInsertAll() \
   .execute()
@@ -203,7 +203,7 @@ else:
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR RESULTS HAS BEEN LOADED SUCCESSFULLY")
 
 # COMMAND ----------
 

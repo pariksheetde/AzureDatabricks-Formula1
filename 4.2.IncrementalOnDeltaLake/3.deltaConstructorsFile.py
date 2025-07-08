@@ -83,4 +83,4 @@ rename_constructors_df.write.mode("overwrite").format("delta").saveAsTable("f1_d
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR CONSTRUCTORS HAS BEEN LOADED SUCCESSFULLY")

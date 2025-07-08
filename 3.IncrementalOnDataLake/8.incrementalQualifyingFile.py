@@ -149,9 +149,4 @@ else:
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
-
-# COMMAND ----------
-
-# MAGIC %sql
-# MAGIC DROP TABLE f1_incremental.qualifying;
+dbutils.notebook.exit("INCREMENTAL LOAD FOR QUALIFYING HAS BEEN LOADED SUCCESSFULLY")

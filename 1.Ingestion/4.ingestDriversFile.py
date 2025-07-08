@@ -120,7 +120,7 @@ validate_drivers_df = spark.read \
 
 display(validate_drivers_df)
 validate_drivers_df.printSchema()
-print(f"Number of Records Read {validate_drivers_df.count()}")
+print(f"NUMBER OF RECORDS TO BE PROCESSED: {validate_drivers_df.count()}")
 
 
 # COMMAND ----------
@@ -139,4 +139,4 @@ print(f"Number of Records Read {validate_drivers_df.count()}")
 
 # COMMAND ----------
 
-dbutils.notebook.exit(f"Number of Records Read {validate_drivers_df.count()}")
+dbutils.notebook.exit(f"NUMBER OF RECORDS VALIDATED: {validate_drivers_df.count()}")

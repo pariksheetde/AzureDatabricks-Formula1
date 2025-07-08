@@ -84,4 +84,4 @@ lap_times_renamed_df.write.mode("overwrite").format("parquet").saveAsTable("f1_e
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("LAP TIMES HAS BEEN LOADED SUCCESSFULLY")
