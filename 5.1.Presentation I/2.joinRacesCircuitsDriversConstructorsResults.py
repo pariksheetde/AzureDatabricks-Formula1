@@ -83,7 +83,7 @@ print(f"Number of Records Read {results_df.count()}")
 # COMMAND ----------
 
 join_races_circuits_df = races_df.join(circuit_df, races_df.circuit_id == circuit_df.circuit_id, "inner") \
-.select("race_id", "race_year", "race_name", "race_date", "circuit_location")
+.select("race_id", "race_year", "race_name", "date", "circuit_location")
 display(join_races_circuits_df)
 
 # COMMAND ----------
@@ -93,7 +93,7 @@ from pyspark.sql.functions import current_timestamp, col
 join_race_results_df = results_df.join(join_races_circuits_df, results_df.race_id == join_races_circuits_df.race_id, "inner") \
                                     .join(drivers_df, results_df.driver_id == drivers_df.driver_id, "inner") \
                                     .join(constructors_df, results_df.constructor_id == constructors_df.cons_id, "inner") \
-.select("race_year", "race_name", "race_date", "circuit_location", "driver_name", "driver_number", "driver_nationality", 
+.select("race_year", "race_name", "date", "circuit_location", "driver_name", "driver_number", "driver_nationality", 
         "team", "grid", "fastest_lap", "race_time", "points", "position") \
 .orderBy(col("points").desc()) \
 .withColumn("created_dt", current_timestamp())

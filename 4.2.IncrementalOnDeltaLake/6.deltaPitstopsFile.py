@@ -137,7 +137,7 @@ from delta.tables import DeltaTable
 spark.conf.set("spark.databricks.optimizer.dynamicPartitionPruning", "true")
 
 if (spark._jsparkSession.catalog().tableExists("f1_delta.pit_stops")):
-  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/pit_stops")
+  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/Transformation/pit_stops")
   deltaTable.alias("tgt").merge(
     sel_validate_pit_stops_df.alias("src"),
     "tgt.race_id = src.race_id AND tgt.driver_id = src.driver_id AND tgt.stop = src.stop") \
@@ -175,7 +175,7 @@ else:
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR PIT STOPS HAS BEEN LOADED SUCCESSFULLY")
 
 # COMMAND ----------
 

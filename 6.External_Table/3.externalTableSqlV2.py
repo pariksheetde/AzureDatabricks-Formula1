@@ -48,7 +48,9 @@ display(race_results_df)
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT COUNT(*) FROM f1_presentation.race_results_ext_sql_v2;
+# MAGIC SELECT COUNT(*) 
+# MAGIC AS total
+# MAGIC FROM f1_presentation.race_results_ext_sql_v2;
 
 # COMMAND ----------
 

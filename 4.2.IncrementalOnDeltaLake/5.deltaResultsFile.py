@@ -139,10 +139,10 @@ from delta.tables import DeltaTable
 spark.conf.set("spark.databricks.optimizer.dynamicPartitionPruning", "true")
 
 if (spark._jsparkSession.catalog().tableExists("f1_delta.results")):
-  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/results")
+  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/Transformation/results")
   deltaTable.alias("tgt").merge(
     results_deduped_df.alias("src"),
-    "tgt.resultId = src.result_id AND tgt.race_id = src.race_id") \
+    "tgt.result_Id = src.result_id AND tgt.race_id = src.race_id") \
   .whenMatchedUpdateAll() \
   .whenNotMatchedInsertAll() \
   .execute()

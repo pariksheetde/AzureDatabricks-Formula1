@@ -130,7 +130,7 @@ from delta.tables import DeltaTable
 spark.conf.set("spark.databricks.optimizer.dynamicPartitionPruning", "true")
 
 if (spark._jsparkSession.catalog().tableExists("f1_delta.lap_times")):
-  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/lap_times")
+  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/Transformation/lap_times")
   deltaTable.alias("tgt").merge(
     validate_final_lap_times_df.alias("src"),
     "tgt.driver_id = src.driver_id AND tgt.race_id = src.race_id AND tgt.lap = src.lap") \
@@ -162,4 +162,4 @@ else:
 
 # COMMAND ----------
 
-dbutils.notebook.exit("EXECUTED SUCCESSFULLY")
+dbutils.notebook.exit("INCREMENTAL LOAD FOR LAP TIMES HAS BEEN LOADED SUCCESSFULLY")

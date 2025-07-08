@@ -27,7 +27,7 @@
 
 # MAGIC %sql
 # MAGIC CREATE DATABASE IF NOT EXISTS f1_delta
-# MAGIC LOCATION "/mnt/formula1dbdevadls/deltalake";
+# MAGIC LOCATION "/mnt/formula1dbdevadls/deltalake/Transformation";
 
 # COMMAND ----------
 

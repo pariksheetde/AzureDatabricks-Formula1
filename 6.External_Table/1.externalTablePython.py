@@ -23,7 +23,9 @@ race_results_df.write.mode("overWrite").format("json").option("path", f"{present
 # COMMAND ----------
 
 # MAGIC %sql
-# MAGIC SELECT COUNT(*) FROM f1_presentation.race_results_ext_python_v1;
+# MAGIC SELECT COUNT(*) 
+# MAGIC AS cnt
+# MAGIC FROM f1_presentation.race_results_ext_python_v1;
 
 # COMMAND ----------
 
