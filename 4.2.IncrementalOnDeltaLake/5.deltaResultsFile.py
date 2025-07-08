@@ -135,19 +135,35 @@ results_deduped_df = results_final_df.dropDuplicates(["race_id", "driver_id"])
 
 # COMMAND ----------
 
+# from delta.tables import DeltaTable
+# spark.conf.set("spark.databricks.optimizer.dynamicPartitionPruning", "true")
+
+# if (spark._jsparkSession.catalog().tableExists("f1_delta.results")):
+#   deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/Transformation/results")
+#   deltaTable.alias("tgt").merge(
+#     results_deduped_df.alias("src"),
+#     "tgt.result_Id = src.result_id AND tgt.race_id = src.race_id") \
+#   .whenMatchedUpdateAll() \
+#   .whenNotMatchedInsertAll() \
+#   .execute()
+# else:
+#   results_deduped_df.write.mode("overwrite").partitionBy("race_id").format("delta").saveAsTable("f1_delta.results")
+
+# COMMAND ----------
+
 from delta.tables import DeltaTable
 spark.conf.set("spark.databricks.optimizer.dynamicPartitionPruning", "true")
 
-if (spark._jsparkSession.catalog().tableExists("f1_delta.results")):
-  deltaTable = DeltaTable.forPath(spark, "/mnt/formula1dbdevadls/deltalake/Transformation/results")
-  deltaTable.alias("tgt").merge(
-    results_deduped_df.alias("src"),
-    "tgt.result_Id = src.result_id AND tgt.race_id = src.race_id") \
-  .whenMatchedUpdateAll() \
-  .whenNotMatchedInsertAll() \
-  .execute()
+delta_table_path = "/mnt/formula1dbdevadls/deltalake/Transformation/results"
+
+if DeltaTable.isDeltaTable(spark, delta_table_path):
+    deltaTable = DeltaTable.forPath(spark, delta_table_path)
+    deltaTable.alias("tgt").merge(
+        results_deduped_df.alias("src"),
+        "tgt.result_Id = src.result_id AND tgt.race_id = src.race_id"
+    ).whenMatchedUpdateAll().whenNotMatchedInsertAll().execute()
 else:
-  results_deduped_df.write.mode("overwrite").partitionBy("race_id").format("delta").saveAsTable("f1_delta.results")
+    results_deduped_df.write.mode("overwrite").partitionBy("race_id").format("delta").saveAsTable("f1_delta.results")
 
 # COMMAND ----------
 
